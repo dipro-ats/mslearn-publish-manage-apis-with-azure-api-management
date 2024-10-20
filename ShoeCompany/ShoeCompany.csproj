@@ -29,4 +29,7 @@
     </None>
   </ItemGroup>
 
+  <EnvironmentVariables>
+      <NUGET_EXPERIMENTAL_CHAIN_BUILD_RETRY_POLICY>2,1000</NUGET_EXPERIMENTAL_CHAIN_BUILD_RETRY_POLICY>
+  </EnvironmentVariables>
 </Project>
