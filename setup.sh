@@ -12,7 +12,8 @@ git config --global user.name "$GIT_USERNAME"
 git config --global user.email "$GIT_EMAIL"
 
 
-RESOURCE_GROUP=$(az group list --query "[0].name" -o tsv)
+RESOURCE_GROUP=az-mslearn-apim-$RANDOM
+LOCATION=canadacentral
 
 # Create App Service plan
 PLAN_NAME=myPlan
@@ -21,7 +22,7 @@ PLAN_NAME=myPlan
 printf "\nCreating App Service plan in FREE tier ... (2/7)\n\n"
 
 
-az appservice plan create --name $apiappname --resource-group $RESOURCE_GROUP --sku FREE --location centralus --verbose
+az appservice plan create --name $apiappname --resource-group $RESOURCE_GROUP --sku FREE --location $LOCATION --verbose
 
 printf "\nCreating API App ... (3/7)\n\n"
 
